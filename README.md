@@ -2,7 +2,7 @@
 
 An AI-powered study assistant built with Google ADK 2.0 that helps students learn effectively by turning their notes into interactive quizzes.
 
-*What it does
+## What it does
 
 1. **Accepts study notes** - paste any notes directly into the chat
 2. **Summarizes key topics** - extracts the most important concepts
@@ -11,19 +11,19 @@ An AI-powered study assistant built with Google ADK 2.0 that helps students lear
 5. **Tracks your score** - tells you if you're right or wrong with explanations
 6. **Recommends review topics** - tells you what to study more based on your performance
 
-*Security Features
+## Security Features
 
 - **Prompt injection detection** - blocks attempts to manipulate the agent
 - **Input validation** - ensures the input is genuine study notes
 
-*Tech Stack
+## Tech Stack
 
 - Google ADK 2.0
 - Gemini 3.1 Flash Lite
 - Google Antigravity IDE
 - Python 3.12
 
-*How to run locally
+## How to run locally
 
 1. Clone this repo
 2. Create a `.env` file with your Gemini API key: GEMINI_API_KEY=your_key_here
