@@ -1,89 +1,33 @@
-# study-buddy-agent
+# Highlight - AI Study Agent
 
-Simple ReAct agent
-Agent generated with `agents-cli` version `0.5.0`
+An AI-powered study assistant built with Google ADK 2.0 that helps students learn effectively by turning their notes into interactive quizzes.
 
-## Project Structure
+1.  What it does
 
-```
-study-buddy-agent/
-├── app/         # Core agent code
-│   ├── agent.py               # Main agent logic
-│   ├── agent_runtime_app.py    # Agent Runtime application logic
-│   └── app_utils/             # App utilities and helpers
-├── tests/                     # Unit, integration, and load tests
-├── GEMINI.md                  # AI-assisted development guide
-└── pyproject.toml             # Project dependencies
-```
+1. **Accepts study notes** - paste any notes directly into the chat
+2. **Summarizes key topics** - extracts the most important concepts
+3. **Generates 5 practice questions** - based on your actual notes
+4. **Interactive quiz** - asks one question at a time
+5. **Tracks your score** - tells you if you're right or wrong with explanations
+6. **Recommends review topics** - tells you what to study more based on your performance
 
-> 💡 **Tip:** Use [Gemini CLI](https://github.com/google-gemini/gemini-cli) for AI-assisted development - project context is pre-configured in `GEMINI.md`.
+2. Security Features
 
-## Requirements
+- **Prompt injection detection** - blocks attempts to manipulate the agent
+- **Input validation** - ensures the input is genuine study notes
 
-Before you begin, ensure you have:
-- **uv**: Python package manager (used for all dependency management in this project) - [Install](https://docs.astral.sh/uv/getting-started/installation/) ([add packages](https://docs.astral.sh/uv/concepts/dependencies/) with `uv add <package>`)
-- **agents-cli**: Agents CLI - Install with `uv tool install google-agents-cli`
-- **Google Cloud SDK**: For GCP services - [Install](https://cloud.google.com/sdk/docs/install)
+3. Tech Stack
 
+- Google ADK 2.0
+- Gemini 3.1 Flash Lite
+- Google Antigravity IDE
+- Python 3.12
 
-## Quick Start
+4.  How to run locally
 
-Install `agents-cli` and its skills if not already installed:
-
-```bash
-uvx google-agents-cli setup
-```
-
-Install required packages:
-
-```bash
-agents-cli install
-```
-
-Test the agent with a local web server:
-
-```bash
-agents-cli playground
-```
-
-You can also use features from the [ADK](https://adk.dev/) CLI with `uv run adk`.
-
-## Commands
-
-| Command              | Description                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------------- |
-| `agents-cli install` | Install dependencies using uv                                                         |
-| `agents-cli playground` | Launch local development environment                                                  |
-| `agents-cli lint`    | Run code quality checks                                                               |
-| `agents-cli eval`    | Evaluate agent behavior (generate, grade, analyze, and more — see `agents-cli eval --help`) |
-| `uv run pytest tests/unit tests/integration` | Run unit and integration tests                                                        |
-| `agents-cli deploy`  | Deploy agent to Agent Runtime                                                                |
-| `agents-cli publish gemini-enterprise` | Register deployed agent to Gemini Enterprise                    |
-
-## 🛠️ Project Management
-
-| Command | What It Does |
-|---------|--------------|
-| `agents-cli scaffold enhance` | Add CI/CD pipelines and Terraform infrastructure |
-| `agents-cli infra cicd` | One-command setup of entire CI/CD pipeline + infrastructure |
-| `agents-cli scaffold upgrade` | Auto-upgrade to latest version while preserving customizations |
-
----
-
-## Development
-
-Edit your agent logic in `app/agent.py` and test with `agents-cli playground` - it auto-reloads on save.
-
-## Deployment
-
-```bash
-gcloud config set project <your-project-id>
-agents-cli deploy
-```
-
-To add CI/CD and Terraform, run `agents-cli scaffold enhance`.
-To set up your production infrastructure, run `agents-cli infra cicd`.
-
-## Observability
-
-Built-in telemetry exports to Cloud Trace, BigQuery, and Cloud Logging.
+1. Clone this repo
+2. Create a `.env` file with your Gemini API key: GEMINI_API_KEY=your_key_here
+3. Install dependencies: uv sync
+4. Run the playground: uv run adk web . --host 127.0.0.1 --port 8080
+5. Open http://127.0.0.1:8080/dev-ui/ and select app
+6. Paste your study notes
