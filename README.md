@@ -1,33 +1,33 @@
 # Highlight - AI Study Agent
 
-An AI-powered study assistant built with Google ADK 2.0 that helps students learn effectively by turning their notes into interactive quizzes.
 
-## What it does
+## Problem
+Study tools such as flashcards only allow simple memorization and do not adapt based on student performance. They neither give an explanation of why an answer is wrong nor identify the weak areas for students. It forces students to spend equal amount of time on both things that they have mastered and those that they haven't.
 
-1. **Accepts study notes** - paste any notes directly into the chat
-2. **Summarizes key topics** - extracts the most important concepts
-3. **Generates 5 practice questions** - based on your actual notes
-4. **Interactive quiz** - asks one question at a time
-5. **Tracks your score** - tells you if you're right or wrong with explanations
-6. **Recommends review topics** - tells you what to study more based on your performance
 
-## Security Features
+## Solution
 
-- **Prompt injection detection** - blocks attempts to manipulate the agent
-- **Input validation** - ensures the input is genuine study notes
+Highlight is an Ai study agent which gives personalized feedback to students based on their performance. The users pastes their notes and the agent does the following:
 
-## Tech Stack
+1. Generates the key topics covered in the note
+2. Creates 5 practice questions based on the note
+3. Quizzes the user on one question at a time
+4. Gives an explanation for the correct and incorrect answers
+5. Monitors the performance during the whole session
+6. Finally, highlights the weak areas of the user and suggests them to review them.
 
-- Google ADK 2.0
-- Gemini 3.1 Flash Lite
-- Google Antigravity IDE
-- Python 3.12
+## Architecture
 
-## How to run locally
+Developed using Google ADK 2.0 and help from an agent powered by Gemini 3.1 FlashLite
+
+
+**Security Feature:** The `validate_notes` tool checks for prompt injection patterns such as ignore previous instructions, bypass, and jailbreak before the agent processes the input, protecting against manipulation of the agent's behavior.
+
+## How to setup
 
 1. Clone this repo
 2. Create a `.env` file with your Gemini API key: GEMINI_API_KEY=your_key_here
 3. Install dependencies: uv sync
 4. Run the playground: uv run adk web . --host 127.0.0.1 --port 8080
 5. Open http://127.0.0.1:8080/dev-ui/ and select app
-6. Paste your study notes
+6. Paste your text
