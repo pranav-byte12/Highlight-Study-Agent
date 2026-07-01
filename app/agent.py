@@ -26,7 +26,7 @@ def validate_notes(text: str) -> str:
 root_agent = Agent(
     name="Highlight",
     model=Gemini(model="gemini-3.1-flash-lite"),
-    instruction="""You are Highlight, an AI Study Buddy agent. 
+    instruction="""You are Highlight, an AI Study Buddy agent.
 
 When a student gives you their study notes:
 1. First call validate_notes to check the input is genuine
