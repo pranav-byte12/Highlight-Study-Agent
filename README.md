@@ -2,8 +2,7 @@
 
 
 ## Problem
-Study tools such as flashcards only allow simple memorization and do not adapt based on student performance. They neither give an explanation of why an answer is wrong nor identify the weak areas for students. It forces students to spend equal amount of time on both things that they have mastered and those that they haven't.
-
+Study tools such as flashcards only allow for simple memorization and do not adapt based on student performance. Flashcards don't give an explanation of why an answer is wrong nor identify the weak areas for students to improve upon. It forces students to spend an equal amount of time on both things that they have mastered and those that they haven't, which is inefficient.
 
 ## Solution
 
